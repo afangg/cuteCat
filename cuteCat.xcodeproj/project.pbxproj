@@ -14,6 +14,7 @@
 		7E4C91161EC519C3007EB735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C91141EC519C3007EB735 /* LaunchScreen.storyboard */; };
 		7E4C91211EC519C3007EB735 /* cuteCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C91201EC519C3007EB735 /* cuteCatTests.swift */; };
 		7E4C912C1EC519C3007EB735 /* cuteCatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C912B1EC519C3007EB735 /* cuteCatUITests.swift */; };
+		7E4C913A1EC51B54007EB735 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C91391EC51B54007EB735 /* popSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7E4C91271EC519C3007EB735 /* cuteCatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cuteCatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4C912B1EC519C3007EB735 /* cuteCatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cuteCatUITests.swift; sourceTree = "<group>"; };
 		7E4C912D1EC519C3007EB735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E4C91391EC51B54007EB735 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7E4C910F1EC519C3007EB735 /* Main.storyboard */,
 				7E4C91121EC519C3007EB735 /* Assets.xcassets */,
 				7E4C91141EC519C3007EB735 /* LaunchScreen.storyboard */,
+				7E4C91391EC51B54007EB735 /* popSound.mp3 */,
 				7E4C91171EC519C3007EB735 /* Info.plist */,
 			);
 			path = cuteCat;
@@ -237,6 +240,7 @@
 			files = (
 				7E4C91161EC519C3007EB735 /* LaunchScreen.storyboard in Resources */,
 				7E4C91131EC519C3007EB735 /* Assets.xcassets in Resources */,
+				7E4C913A1EC51B54007EB735 /* popSound.mp3 in Resources */,
 				7E4C91111EC519C3007EB735 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
