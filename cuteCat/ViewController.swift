@@ -13,8 +13,12 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var counterImage: UIImageView!
+    @IBOutlet var counterLabel: UILabel!
+    
     var audioPlayer = AVAudioPlayer()
     var timeAction = Timer()
+    var counter = 0
     
     var bgColor = UIColor(red: 1, green: 0.65, blue: 0.65, alpha: 1)
     var color = CIColor()
@@ -30,33 +34,55 @@ class ViewController: UIViewController {
         changeColor()
         
         catGif()
+        var beatingArray = [#imageLiteral(resourceName: "beatingHeart1"),#imageLiteral(resourceName: "beatingHeart2")]
+        playAnimation(imageView: counterImage, imageArray: beatingArray, duration: 1)
         
         
     }
     
     @IBAction func tap(_ sender: UITapGestureRecognizer)
     {
+        heartGif(sender: sender)
+        playSound(file: "popSound", type: "mp3")
+        counter+=1
+        counterLabel.text = ": " + String(counter)
+        
+    }
+    
+    func heartGif(sender: UITapGestureRecognizer)
+    {
         let size = Int(arc4random_uniform(200)+50)
         let heartImageView = UIImageView(frame: CGRect(origin: sender.location(in: view), size: CGSize(width: size, height: size)))
         heartImageView.center = sender.location(in: view)
         heartImageView.sizeThatFits(#imageLiteral(resourceName: "heart1").size)
-        heartImageView.animationImages = [#imageLiteral(resourceName: "heart1"),#imageLiteral(resourceName: "heart1b"),#imageLiteral(resourceName: "heart2"),#imageLiteral(resourceName: "heart3"),#imageLiteral(resourceName: "heart4"),#imageLiteral(resourceName: "heart5"),#imageLiteral(resourceName: "heart6"),#imageLiteral(resourceName: "heart7"),#imageLiteral(resourceName: "heart8"),#imageLiteral(resourceName: "heart9"),#imageLiteral(resourceName: "heart10"),#imageLiteral(resourceName: "heart11")]
-        heartImageView.animationDuration = 0.75
-        heartImageView.animationRepeatCount = 1
         self.view.addSubview(heartImageView)
-        heartImageView.startAnimating()
         
-        playSound(file: "popSound", type: "mp3")
+        var heartArray = [#imageLiteral(resourceName: "heart1"),#imageLiteral(resourceName: "heart1b"),#imageLiteral(resourceName: "heart2"),#imageLiteral(resourceName: "heart3"),#imageLiteral(resourceName: "heart4"),#imageLiteral(resourceName: "heart5"),#imageLiteral(resourceName: "heart6"),#imageLiteral(resourceName: "heart7"),#imageLiteral(resourceName: "heart8"),#imageLiteral(resourceName: "heart9"),#imageLiteral(resourceName: "heart10"),#imageLiteral(resourceName: "heart11")]
+        playAnimation(imageView: heartImageView, imageArray: heartArray, duration: 0.75, repeatAnimate: 1)
+    }
+    func catGif()
+    {
+        var catArray = [#imageLiteral(resourceName: "cuteCat-1"),#imageLiteral(resourceName: "cuteCat-2"),#imageLiteral(resourceName: "cuteCat-3"),#imageLiteral(resourceName: "cuteCat-4"),#imageLiteral(resourceName: "cuteCat-5"),#imageLiteral(resourceName: "cuteCat-6"),#imageLiteral(resourceName: "cuteCat-7"),#imageLiteral(resourceName: "cuteCat-8"),#imageLiteral(resourceName: "cuteCat-9"),#imageLiteral(resourceName: "cuteCat-10"),#imageLiteral(resourceName: "cuteCat-11"),#imageLiteral(resourceName: "cuteCat-12")]
+        
+        playAnimation(imageView: imageView, imageArray: catArray, duration: 1)
+
         
     }
     
-    
-    func catGif()
+    func playAnimation(imageView: UIImageView, imageArray: [UIImage], duration: Double, repeatAnimate: Int)
     {
-        imageView.animationImages = [#imageLiteral(resourceName: "cuteCat-1"),#imageLiteral(resourceName: "cuteCat-2"),#imageLiteral(resourceName: "cuteCat-3"),#imageLiteral(resourceName: "cuteCat-4"),#imageLiteral(resourceName: "cuteCat-5"),#imageLiteral(resourceName: "cuteCat-6"),#imageLiteral(resourceName: "cuteCat-7"),#imageLiteral(resourceName: "cuteCat-8"),#imageLiteral(resourceName: "cuteCat-9"),#imageLiteral(resourceName: "cuteCat-10"),#imageLiteral(resourceName: "cuteCat-11"),#imageLiteral(resourceName: "cuteCat-12")]
-        imageView.animationDuration = 1
-        imageView.startAnimating()
+        imageView.animationImages = imageArray
+        imageView.animationDuration = duration
+        imageView.animationRepeatCount = repeatAnimate
         
+        imageView.startAnimating()
+    }
+    func playAnimation(imageView: UIImageView, imageArray: [UIImage], duration: Double)
+    {
+        imageView.animationImages = imageArray
+        imageView.animationDuration = duration
+        
+        imageView.startAnimating()
     }
     
     func playSound(file: NSString, type: NSString){
