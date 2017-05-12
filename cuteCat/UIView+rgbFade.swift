@@ -29,9 +29,6 @@ extension UIView
         
         if tempRed == 255 && tempGreen < 255 && tempBlue == 165{
             tempGreen += 2
-            print("red: " + String(tempRed))
-            print("green: " + String(tempGreen))
-            print("blue: " + String(tempBlue))
             assignColors(red: tempRed, green: tempGreen, blue: tempBlue)
         }
         else if tempRed > 165 && tempGreen == 255 && tempBlue == 165
