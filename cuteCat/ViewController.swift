@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        savedScore = scoreDefaults.value(forKeyPath: "score") as! Int
+        if scoreDefaults.value(forKeyPath: "score") != nil {
+            savedScore = scoreDefaults.value(forKeyPath: "score") as! Int}
         counterLabel.text = ": " + String(savedScore)
         
         view.backgroundColor = UIColor(red: 1, green: 0.65, blue: 0.65, alpha: 1)
