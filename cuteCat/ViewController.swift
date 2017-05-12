@@ -18,10 +18,15 @@ class ViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var timeAction = Timer()
-    var counter = 0
+    var savedScore = 0
+    
+    var scoreDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        savedScore = scoreDefaults.value(forKeyPath: "score") as! Int
+        counterLabel.text = ": " + String(savedScore)
         
         view.backgroundColor = UIColor(red: 1, green: 0.65, blue: 0.65, alpha: 1)
         view.changeColor()
@@ -30,23 +35,25 @@ class ViewController: UIViewController {
         let beatingArray = [#imageLiteral(resourceName: "beatingHeart1"),#imageLiteral(resourceName: "beatingHeart2")]
         counterImage.playAnimation(imageArray: beatingArray, duration: 1)
         
-        
     }
+
     
     @IBAction func tap(_ sender: UITapGestureRecognizer)
     {
         heartGif(sender: sender)
         playSound(file: "popSound", type: "mp3")
-        counter+=1
-        counterLabel.text = ": " + String(counter)
+        
+        savedScore+=1
+        scoreDefaults.set(savedScore, forKey: "score")
+        counterLabel.text = ": " + String(savedScore)
         
     }
     
     func heartGif(sender: UITapGestureRecognizer)
     {
         let size = Int(arc4random_uniform(200)+50)
-        let heartImageView = UIImageView(frame: CGRect(origin: sender.location(in: view), size: CGSize(width: size, height: size)))
-        heartImageView.center = sender.location(in: view)
+        let heartImageView = UIImageView(
+            frame: CGRect(x: Int(sender.location(in: view).x)-(size/2), y: Int(sender.location(in: view).y)-(size/2), width: size, height: size))
         heartImageView.sizeThatFits(#imageLiteral(resourceName: "heart1").size)
         self.view.addSubview(heartImageView)
         
@@ -57,7 +64,6 @@ class ViewController: UIViewController {
     {
         let catArray = [#imageLiteral(resourceName: "cuteCat-1"),#imageLiteral(resourceName: "cuteCat-2"),#imageLiteral(resourceName: "cuteCat-3"),#imageLiteral(resourceName: "cuteCat-4"),#imageLiteral(resourceName: "cuteCat-5"),#imageLiteral(resourceName: "cuteCat-6"),#imageLiteral(resourceName: "cuteCat-7"),#imageLiteral(resourceName: "cuteCat-8"),#imageLiteral(resourceName: "cuteCat-9"),#imageLiteral(resourceName: "cuteCat-10"),#imageLiteral(resourceName: "cuteCat-11"),#imageLiteral(resourceName: "cuteCat-12")]
         imageView.playAnimation(imageArray: catArray, duration: 1)
-        
         
     }
 
