@@ -15,6 +15,8 @@
 		7E4C91211EC519C3007EB735 /* cuteCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C91201EC519C3007EB735 /* cuteCatTests.swift */; };
 		7E4C912C1EC519C3007EB735 /* cuteCatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C912B1EC519C3007EB735 /* cuteCatUITests.swift */; };
 		7E4C913A1EC51B54007EB735 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C91391EC51B54007EB735 /* popSound.mp3 */; };
+		7E4C917A1EC55C79007EB735 /* UIView+rgbFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */; };
+		7E4C917E1EC55F1F007EB735 /* UIImageView+animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7E4C912B1EC519C3007EB735 /* cuteCatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cuteCatUITests.swift; sourceTree = "<group>"; };
 		7E4C912D1EC519C3007EB735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E4C91391EC51B54007EB735 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
+		7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+rgbFade.swift"; sourceTree = "<group>"; };
+		7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+animate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7E4C91141EC519C3007EB735 /* LaunchScreen.storyboard */,
 				7E4C91391EC51B54007EB735 /* popSound.mp3 */,
 				7E4C91171EC519C3007EB735 /* Info.plist */,
+				7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */,
+				7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */,
 			);
 			path = cuteCat;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4C917A1EC55C79007EB735 /* UIView+rgbFade.swift in Sources */,
 				7E4C910E1EC519C3007EB735 /* ViewController.swift in Sources */,
+				7E4C917E1EC55F1F007EB735 /* UIImageView+animate.swift in Sources */,
 				7E4C910C1EC519C3007EB735 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +528,7 @@
 				7E4C91321EC519C3007EB735 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E4C91331EC519C3007EB735 /* Build configuration list for PBXNativeTarget "cuteCatTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +537,7 @@
 				7E4C91351EC519C3007EB735 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E4C91361EC519C3007EB735 /* Build configuration list for PBXNativeTarget "cuteCatUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +546,7 @@
 				7E4C91381EC519C3007EB735 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
