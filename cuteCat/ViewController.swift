@@ -45,9 +45,14 @@ class ViewController: UIViewController {
         playSound(file: "popSound", type: "mp3")
         
         savedScore+=1
-        scoreDefaults.set(savedScore, forKey: "score")
-        counterLabel.text = ": " + String(savedScore)
+        updateScore()
         
+    }
+    
+    @IBAction func reset(_ sender: Any)
+    {
+        savedScore = 0
+        updateScore()
     }
     
     func heartGif(sender: UITapGestureRecognizer)
@@ -79,6 +84,20 @@ class ViewController: UIViewController {
         catch { print("Player not available") }
     }
     
+    func updateScore()
+    {
+        scoreDefaults.set(savedScore, forKey: "score")
+        counterLabel.text = ": " + String(savedScore)
+    }
+    func achievement(score: Int)
+    {
+        
+        let popUp = UIAlertController(title: "Achievment Unlocked", message: "You made it to " + String(score), preferredStyle: .actionSheet)
+        popUp.popoverPresentationController?.sourceView = self.view
+        popUp.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
+        
+        present(popUp, animated: true, completion: nil)
+    }
     
 }
 
