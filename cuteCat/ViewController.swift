@@ -47,6 +47,14 @@ class ViewController: UIViewController {
         savedScore+=1
         updateScore()
         
+        for index in savedScore...1000
+        {
+            if savedScore > 49 && savedScore % 50 == 0
+            {
+                achievement(score: savedScore)
+            }
+        }
+        
     }
     
     @IBAction func reset(_ sender: Any)
@@ -93,11 +101,12 @@ class ViewController: UIViewController {
     {
         
         let popUp = UIAlertController(title: "Achievment Unlocked", message: "You made it to " + String(score), preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "Cool", style: .cancel, handler: nil)
+        popUp.addAction(cancel)
         popUp.popoverPresentationController?.sourceView = self.view
         popUp.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
         
         present(popUp, animated: true, completion: nil)
     }
-    
 }
 
