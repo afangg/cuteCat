@@ -47,12 +47,9 @@ class ViewController: UIViewController {
         savedScore+=1
         updateScore()
         
-        for index in savedScore...1000
+        if savedScore > 49 && savedScore % 50 == 0
         {
-            if savedScore > 49 && savedScore % 50 == 0
-            {
-                achievement(score: savedScore)
-            }
+            achievement(score: savedScore)
         }
         
     }
