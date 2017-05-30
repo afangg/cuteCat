@@ -41,6 +41,8 @@ class achieveVC: UIViewController {
         
         imageArray = [food1,food2,food3,food4,food5,food6,food7,food8,food9,food10,food11,food12,food13,food14,food15,food16,food17,food18,food19,food20]
         
+        p
+        
         for index in 0...total
         {
             imageArray[index].image =
