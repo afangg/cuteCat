@@ -34,18 +34,24 @@ class achieveVC: UIViewController {
     var imageArray = [UIImageView]()
     var pictureArray = [UIImage]()
     
-    var total = 0
+    var total = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageArray = [food1,food2,food3,food4,food5,food6,food7,food8,food9,food10,food11,food12,food13,food14,food15,food16,food17,food18,food19,food20]
+        print(total)
         
-        p
+        imageArray = [food1,food2,food3,food4,food5]
+        //food6,food7,food8,food9,food10,food11,food12,food13,food14,food15,food16,food17,food18,food19,food20]
         
-        for index in 0...total
+        pictureArray = [#imageLiteral(resourceName: "chicken"),#imageLiteral(resourceName: "cookie"),#imageLiteral(resourceName: "dumpling"),#imageLiteral(resourceName: "pancake"),#imageLiteral(resourceName: "pizza")]
+        
+        if total > -1
         {
-            imageArray[index].image =
+            for index in 0...total
+            {
+                imageArray[index].image = pictureArray[index]
+            }
         }
 
     }

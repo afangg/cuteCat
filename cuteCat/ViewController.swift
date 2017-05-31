@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var timeAction = Timer()
     var savedScore = 0
+    var achievementPoints = 0
     
     var scoreDefaults = UserDefaults.standard
     
@@ -47,10 +48,14 @@ class ViewController: UIViewController {
         savedScore+=1
         updateScore()
         
-        if savedScore > 49 && savedScore % 50 == 0
+        achievementPoints = savedScore/100
+        
+        if savedScore > 99 && savedScore % 100 == 0
         {
             achievement(score: savedScore)
         }
+        
+        print(achievementPoints)
         
     }
     
@@ -59,6 +64,17 @@ class ViewController: UIViewController {
         savedScore = 0
         updateScore()
     }
+    
+    @IBAction func hungry(_ sender: Any)
+    {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! achieveVC
+            destinationViewController.total+=1
+    }
+    
+    
     
     func heartGif(sender: UITapGestureRecognizer)
     {
@@ -105,5 +121,8 @@ class ViewController: UIViewController {
         
         present(popUp, animated: true, completion: nil)
     }
+    
+    
+    
 }
 
