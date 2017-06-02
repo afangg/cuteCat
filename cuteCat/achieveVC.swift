@@ -41,8 +41,7 @@ class achieveVC: UIViewController {
         
         print(total)
         
-        imageArray = [food1,food2,food3,food4,food5]
-        //food6,food7,food8,food9,food10,food11,food12,food13,food14,food15,food16,food17,food18,food19,food20]
+        imageArray = [food1,food2,food3,food4,food5,food6,food7,food8,food9,food10,food11,food12,food13,food14,food15,food16,food17,food18,food19,food20]
         
         pictureArray = [#imageLiteral(resourceName: "pizza"),#imageLiteral(resourceName: "milk"),#imageLiteral(resourceName: "cookie"),#imageLiteral(resourceName: "apple"),#imageLiteral(resourceName: "egg"),#imageLiteral(resourceName: "hotdog"),#imageLiteral(resourceName: "cupcake"), #imageLiteral(resourceName: "strawberryCake"),#imageLiteral(resourceName: "popcorn"),#imageLiteral(resourceName: "onigiri"),#imageLiteral(resourceName: "dumpling"),#imageLiteral(resourceName: "donut"),#imageLiteral(resourceName: "steak"),#imageLiteral(resourceName: "sushi"),#imageLiteral(resourceName: "popsicle"),#imageLiteral(resourceName: "waffles"),#imageLiteral(resourceName: "pancake"),#imageLiteral(resourceName: "sammy"),#imageLiteral(resourceName: "lemonade"),#imageLiteral(resourceName: "bread")]
         

@@ -26,14 +26,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if scoreDefaults.value(forKeyPath: "score") != nil {
-            savedScore = scoreDefaults.value(forKeyPath: "score") as! Int}
+        if scoreDefaults.value(forKeyPath: "score") != nil && scoreDefaults.value(forKeyPath: "achievement") != nil
+        {
+            savedScore = scoreDefaults.value(forKeyPath: "score") as! Int
+            achievementPoints = scoreDefaults.value(forKeyPath: "achievement") as! Int
+        }
         counterLabel.text = ": " + String(savedScore)
         
         view.backgroundColor = UIColor(red: 1, green: 0.65, blue: 0.65, alpha: 1)
         view.changeColor()
         
-        catGif()
+        catGif(imageView: imageView)
         let beatingArray = [#imageLiteral(resourceName: "beatingHeart1"),#imageLiteral(resourceName: "beatingHeart2")]
         counterImage.playAnimation(imageArray: beatingArray, duration: 1)
         
@@ -42,20 +45,21 @@ class ViewController: UIViewController {
     
     @IBAction func tap(_ sender: UITapGestureRecognizer)
     {
-        heartGif(sender: sender)
+        heartGif(sender: sender, view: view)
         playSound(file: "popSound", type: "mp3")
         
         savedScore+=1
         updateScore()
         
+        if achievementPoints < savedScore
+        {
         achievementPoints = savedScore/100
+        }
         
         if savedScore > 99 && savedScore % 100 == 0
         {
             achievement(score: savedScore)
         }
-        
-        print(achievementPoints)
         
     }
     
@@ -63,37 +67,24 @@ class ViewController: UIViewController {
     {
         savedScore = 0
         updateScore()
+        print(savedScore)
     }
     
-    @IBAction func hungry(_ sender: Any)
+    @IBAction func jump(_ sender: Any)
     {
+        savedScore += 99
+        updateScore()
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination as! achieveVC
-            destinationViewController.total+=1
+        if achievementPoints > destinationViewController.total
+        {
+            destinationViewController.total = achievementPoints-1
+        }
     }
     
-    
-    
-    func heartGif(sender: UITapGestureRecognizer)
-    {
-        let size = Int(arc4random_uniform(200)+50)
-        let heartImageView = UIImageView(
-            frame: CGRect(x: Int(sender.location(in: view).x)-(size/2), y: Int(sender.location(in: view).y)-(size/2), width: size, height: size))
-        heartImageView.sizeThatFits(#imageLiteral(resourceName: "heart1").size)
-        self.view.addSubview(heartImageView)
-        
-        let heartArray = [#imageLiteral(resourceName: "heart1"),#imageLiteral(resourceName: "heart1b"),#imageLiteral(resourceName: "heart2"),#imageLiteral(resourceName: "heart3"),#imageLiteral(resourceName: "heart4"),#imageLiteral(resourceName: "heart5"),#imageLiteral(resourceName: "heart6"),#imageLiteral(resourceName: "heart7"),#imageLiteral(resourceName: "heart8"),#imageLiteral(resourceName: "heart9"),#imageLiteral(resourceName: "heart10"),#imageLiteral(resourceName: "heart11")]
-        heartImageView.playAnimation(imageArray: heartArray, duration: 0.75, repeatAnimate: 1)
-    }
-    func catGif()
-    {
-        let catArray = [#imageLiteral(resourceName: "cuteCat-1"),#imageLiteral(resourceName: "cuteCat-2"),#imageLiteral(resourceName: "cuteCat-3"),#imageLiteral(resourceName: "cuteCat-4"),#imageLiteral(resourceName: "cuteCat-5"),#imageLiteral(resourceName: "cuteCat-6"),#imageLiteral(resourceName: "cuteCat-7"),#imageLiteral(resourceName: "cuteCat-8"),#imageLiteral(resourceName: "cuteCat-9"),#imageLiteral(resourceName: "cuteCat-10"),#imageLiteral(resourceName: "cuteCat-11"),#imageLiteral(resourceName: "cuteCat-12")]
-        imageView.playAnimation(imageArray: catArray, duration: 1)
-        
-    }
-
     
     func playSound(file: NSString, type: NSString){
         let path = Bundle.main.path(forResource: file as String, ofType: type as String)
@@ -105,9 +96,11 @@ class ViewController: UIViewController {
         catch { print("Player not available") }
     }
     
+    
     func updateScore()
     {
         scoreDefaults.set(savedScore, forKey: "score")
+        scoreDefaults.set(achievementPoints, forKey: "achievements")
         counterLabel.text = ": " + String(savedScore)
     }
     func achievement(score: Int)
