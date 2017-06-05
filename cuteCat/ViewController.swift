@@ -69,12 +69,6 @@ class ViewController: UIViewController {
         updateScore()
         print(savedScore)
     }
-    
-    @IBAction func jump(_ sender: Any)
-    {
-        savedScore += 99
-        updateScore()
-    }
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
