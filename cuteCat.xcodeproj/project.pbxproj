@@ -17,6 +17,7 @@
 		7E4C913A1EC51B54007EB735 /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4C91391EC51B54007EB735 /* popSound.mp3 */; };
 		7E4C917A1EC55C79007EB735 /* UIView+rgbFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */; };
 		7E4C917E1EC55F1F007EB735 /* UIImageView+animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */; };
+		EF08B1FB1EEAE43200BBB268 /* helpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B1FA1EEAE43200BBB268 /* helpVC.swift */; };
 		EF5EC0C71EDDE631001E96DD /* achieveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5EC0C61EDDE631001E96DD /* achieveVC.swift */; };
 		EF69DBA81EE1C9C200C82AD5 /* gifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF69DBA71EE1C9C200C82AD5 /* gifs.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		7E4C91391EC51B54007EB735 /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
 		7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+rgbFade.swift"; sourceTree = "<group>"; };
 		7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+animate.swift"; sourceTree = "<group>"; };
+		EF08B1FA1EEAE43200BBB268 /* helpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpVC.swift; sourceTree = "<group>"; };
 		EF5EC0C61EDDE631001E96DD /* achieveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = achieveVC.swift; sourceTree = "<group>"; };
 		EF69DBA71EE1C9C200C82AD5 /* gifs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				7E4C910D1EC519C3007EB735 /* ViewController.swift */,
 				EF69DBA71EE1C9C200C82AD5 /* gifs.swift */,
 				7E4C910F1EC519C3007EB735 /* Main.storyboard */,
+				EF08B1FA1EEAE43200BBB268 /* helpVC.swift */,
 				EF5EC0C61EDDE631001E96DD /* achieveVC.swift */,
 				7E4C91121EC519C3007EB735 /* Assets.xcassets */,
 				7E4C91141EC519C3007EB735 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 			files = (
 				7E4C917A1EC55C79007EB735 /* UIView+rgbFade.swift in Sources */,
 				7E4C910E1EC519C3007EB735 /* ViewController.swift in Sources */,
+				EF08B1FB1EEAE43200BBB268 /* helpVC.swift in Sources */,
 				EF69DBA81EE1C9C200C82AD5 /* gifs.swift in Sources */,
 				7E4C917E1EC55F1F007EB735 /* UIImageView+animate.swift in Sources */,
 				7E4C910C1EC519C3007EB735 /* AppDelegate.swift in Sources */,
