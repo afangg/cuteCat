@@ -9,8 +9,9 @@
 import UIKit
 import AudioToolbox
 import AVFoundation
+import NotificationBanner
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NotificationBannerDelegate {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var counterImage: UIImageView!
@@ -99,17 +100,30 @@ class ViewController: UIViewController {
     }
     func achievement(score: Int)
     {
+//
+//        let popUp = UIAlertController(title: "Achievment Unlocked", message: "You made it to " + String(score), preferredStyle: .actionSheet)
+//        let cancel = UIAlertAction(title: "Cool", style: .cancel, handler: nil)
+//        popUp.addAction(cancel)
+//        popUp.popoverPresentationController?.sourceView = self.view
+//        popUp.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
+//
+//        present(popUp, animated: true, completion: nil)
         
-        let popUp = UIAlertController(title: "Achievment Unlocked", message: "You made it to " + String(score), preferredStyle: .actionSheet)
-        let cancel = UIAlertAction(title: "Cool", style: .cancel, handler: nil)
-        popUp.addAction(cancel)
-        popUp.popoverPresentationController?.sourceView = self.view
-        popUp.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
-        
-        present(popUp, animated: true, completion: nil)
+        showNotificationBanner(bannerStyle: .successMessage, messageTitle: "Achievement Unlocked", messageContent: "You made it to " + String(score))
     }
     
-    
-    
+    func notificationBannerClick(_ view: NotificationBannerView) {
+        
+        //Dissmiss NotificationBanner
+        dissmissBanner(completion: { Sucess in _ = Bool()
+            if(Sucess){
+                
+            }
+        }
+        )
+        
+    }
 }
+    
+
 
