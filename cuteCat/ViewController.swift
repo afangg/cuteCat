@@ -26,6 +26,7 @@ class ViewController: UIViewController, NotificationBannerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         if scoreDefaults.value(forKeyPath: "score") != nil && scoreDefaults.value(forKeyPath: "achievement") != nil
         {
