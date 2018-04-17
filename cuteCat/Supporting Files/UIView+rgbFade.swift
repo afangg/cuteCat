@@ -18,7 +18,7 @@ extension UIView
         
     }
     
-    func increaseColor()
+    @objc func increaseColor()
     {
         var tempColor = CIColor(color: self.backgroundColor!)
         

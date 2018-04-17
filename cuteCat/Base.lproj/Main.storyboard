@@ -428,15 +428,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="d7v-FY-wsJ"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N3a-nN-BNS" customClass="storeCell" customModule="cuteCat" customModuleProvider="target">
-                                        <rect key="frame" x="89.5" y="0.0" width="196" height="194"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="center" reuseIdentifier="cell" id="N3a-nN-BNS" customClass="storeCell" customModule="cuteCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="196" height="194"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-ZK-PfG">
-                                                    <rect key="frame" x="23" y="103" width="150" height="20"/>
+                                                    <rect key="frame" x="15.5" y="103" width="150" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="tS9-yl-clL"/>
                                                     </constraints>
@@ -448,7 +448,7 @@
                                                     <rect key="frame" x="48" y="18" width="100" height="75"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8R-Cf-FeR">
-                                                    <rect key="frame" x="35" y="148" width="125" height="25"/>
+                                                    <rect key="frame" x="28" y="148" width="125" height="25"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="beatingHeart2" translatesAutoresizingMaskIntoConstraints="NO" id="xw7-bm-iay">
                                                             <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -471,14 +471,24 @@
                                                 </stackView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.64520459751692794" green="0.81422471358756698" blue="0.87531706073096449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="fdV-aA-vd5" firstAttribute="centerX" secondItem="N3a-nN-BNS" secondAttribute="centerX" id="KTx-Xh-pXL"/>
                                             <constraint firstItem="I8R-Cf-FeR" firstAttribute="centerX" secondItem="N3a-nN-BNS" secondAttribute="centerX" id="KXa-Rm-ERi"/>
                                             <constraint firstItem="NDD-ZK-PfG" firstAttribute="centerX" secondItem="N3a-nN-BNS" secondAttribute="centerX" id="h46-he-XYE"/>
                                         </constraints>
-                                        <size key="customSize" width="196" height="194"/>
+                                        <size key="customSize" width="180" height="180"/>
+                                        <connections>
+                                            <outlet property="itemImage" destination="fdV-aA-vd5" id="1kc-ac-IFd"/>
+                                            <outlet property="itemName" destination="NDD-ZK-PfG" id="zmc-qa-XBI"/>
+                                            <outlet property="itemPrice" destination="x6G-vx-h1D" id="Y8C-5i-Rf6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="IMB-Xc-ijW" id="Xul-js-LLQ"/>
+                                    <outlet property="delegate" destination="IMB-Xc-ijW" id="ICh-fl-aXe"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -490,6 +500,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-shop" id="AaM-zn-VSJ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="jNP-KA-JDD" id="waR-Ug-p88"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6G-K5-Ehe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

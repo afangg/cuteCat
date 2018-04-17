@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		064C1C412077E51F00097515 /* CustomerTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C1C402077E51F00097515 /* CustomerTabBar.swift */; };
-		069681EB207E757C00A4E0DE /* storeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069681EA207E757C00A4E0DE /* storeCell.swift */; };
+		066079292084DC8D00A56C06 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066079282084DC8D00A56C06 /* StoreItem.swift */; };
 		06EAF647207E47F600D0F72F /* storeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAF646207E47F600D0F72F /* storeVC.swift */; };
 		7E4C910C1EC519C3007EB735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C910B1EC519C3007EB735 /* AppDelegate.swift */; };
 		7E4C910E1EC519C3007EB735 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C910D1EC519C3007EB735 /* ViewController.swift */; };
@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		064C1C402077E51F00097515 /* CustomerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTabBar.swift; sourceTree = "<group>"; };
-		069681EA207E757C00A4E0DE /* storeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeCell.swift; sourceTree = "<group>"; };
+		066079282084DC8D00A56C06 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		06EAF646207E47F600D0F72F /* storeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeVC.swift; sourceTree = "<group>"; };
 		1F8B03B4FE8A53E9423EEEC9 /* Pods_cuteCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cuteCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		321511D9E7871796AD68D29D /* Pods-cuteCatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cuteCatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cuteCatUITests/Pods-cuteCatUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +107,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0660792A2084DD0700A56C06 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				064C1C402077E51F00097515 /* CustomerTabBar.swift */,
+				7E4C910D1EC519C3007EB735 /* ViewController.swift */,
+				EF08B1FA1EEAE43200BBB268 /* helpVC.swift */,
+				EF5EC0C61EDDE631001E96DD /* achieveVC.swift */,
+				06EAF646207E47F600D0F72F /* storeVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		0660792B2084DD4100A56C06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF69DBA71EE1C9C200C82AD5 /* gifs.swift */,
+				7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */,
+				7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */,
+				066079282084DC8D00A56C06 /* StoreItem.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0904D12D02418F9C8C27F073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,21 +178,14 @@
 		7E4C910A1EC519C3007EB735 /* cuteCat */ = {
 			isa = PBXGroup;
 			children = (
+				0660792A2084DD0700A56C06 /* VC */,
 				7E4C910B1EC519C3007EB735 /* AppDelegate.swift */,
-				EF69DBA71EE1C9C200C82AD5 /* gifs.swift */,
 				7E4C910F1EC519C3007EB735 /* Main.storyboard */,
-				064C1C402077E51F00097515 /* CustomerTabBar.swift */,
-				7E4C910D1EC519C3007EB735 /* ViewController.swift */,
-				EF08B1FA1EEAE43200BBB268 /* helpVC.swift */,
-				EF5EC0C61EDDE631001E96DD /* achieveVC.swift */,
-				06EAF646207E47F600D0F72F /* storeVC.swift */,
-				069681EA207E757C00A4E0DE /* storeCell.swift */,
 				7E4C91121EC519C3007EB735 /* Assets.xcassets */,
 				7E4C91141EC519C3007EB735 /* LaunchScreen.storyboard */,
 				7E4C91391EC51B54007EB735 /* popSound.mp3 */,
 				7E4C91171EC519C3007EB735 /* Info.plist */,
-				7E4C91791EC55C79007EB735 /* UIView+rgbFade.swift */,
-				7E4C917D1EC55F1F007EB735 /* UIImageView+animate.swift */,
+				0660792B2084DD4100A56C06 /* Supporting Files */,
 			);
 			path = cuteCat;
 			sourceTree = "<group>";
@@ -264,23 +280,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Alisha Fong";
 				TargetAttributes = {
 					7E4C91071EC519C3007EB735 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MJ6E6AD3QZ;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					7E4C911B1EC519C3007EB735 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = AM8T85FCLU;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7E4C91071EC519C3007EB735;
 					};
 					7E4C91261EC519C3007EB735 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = AM8T85FCLU;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7E4C91071EC519C3007EB735;
 					};
@@ -494,11 +513,11 @@
 				06EAF647207E47F600D0F72F /* storeVC.swift in Sources */,
 				EF08B1FB1EEAE43200BBB268 /* helpVC.swift in Sources */,
 				EF69DBA81EE1C9C200C82AD5 /* gifs.swift in Sources */,
-				069681EB207E757C00A4E0DE /* storeCell.swift in Sources */,
 				7E4C917E1EC55F1F007EB735 /* UIImageView+animate.swift in Sources */,
 				064C1C412077E51F00097515 /* CustomerTabBar.swift in Sources */,
 				7E4C910C1EC519C3007EB735 /* AppDelegate.swift in Sources */,
 				EF5EC0C71EDDE631001E96DD /* achieveVC.swift in Sources */,
+				066079292084DC8D00A56C06 /* StoreItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +582,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -571,7 +592,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -614,7 +639,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -622,7 +649,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -658,7 +689,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -672,7 +704,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -687,7 +720,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cuteCat.app/cuteCat";
 			};
 			name = Debug;
@@ -703,7 +737,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cuteCat.app/cuteCat";
 			};
 			name = Release;
@@ -718,7 +753,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = cuteCat;
 			};
 			name = Debug;
@@ -733,7 +769,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.cuteCatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = cuteCat;
 			};
 			name = Release;
